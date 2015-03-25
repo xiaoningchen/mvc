@@ -6,6 +6,12 @@ import com.xiaoning.mvc.bean.Employee;
 
 public interface EmpDAO {
 	/**
+	 * 通过条件查询
+	 * @param ce:条件
+	 * @return
+	 */
+	public List<Employee> getForListWithFuzzyQuery(FuzzyQuery ce);
+	/**
 	 * 获取一个employee的集合
 	 * @return
 	 */

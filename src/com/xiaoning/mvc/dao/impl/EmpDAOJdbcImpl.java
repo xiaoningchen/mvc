@@ -5,9 +5,9 @@ import java.util.List;
 import com.xiaoning.mvc.bean.Employee;
 import com.xiaoning.mvc.dao.DAO;
 import com.xiaoning.mvc.dao.EmpDAO;
+import com.xiaoning.mvc.dao.FuzzyQuery;
 
 public class EmpDAOJdbcImpl extends DAO<Employee> implements EmpDAO {
-
 	@Override
 	public List<Employee> getAll() {
 		String sql = "select * from employee";
@@ -36,6 +36,14 @@ public class EmpDAOJdbcImpl extends DAO<Employee> implements EmpDAO {
 	public long getCountWithName(String name) {
 		String sql = "select count(id) from employee where name = ?";
 		return getForValue(sql, name);
+	}
+
+	
+	@Override
+	public List<Employee> getForListWithFuzzyQuery(FuzzyQuery fq) {
+		String sql = "select * from employee where id like ? and name like ? and phone like ?";
+		
+		return getForList(sql, fq.getId(),fq.getName(),fq.getPhone());
 	}
 
 }

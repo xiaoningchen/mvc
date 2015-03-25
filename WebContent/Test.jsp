@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a half = "empservlet?method=add">add</a>
+	<a href = "add.do">add</a>
 	<br>
-	<a half = "empservlet?method=add">add</a>
+	<a href = "update.do">update</a>
 	<br>
-	<a half = "empservlet?method=add">add</a>
+	<a href = "delete.do">delete</a>
+	<br>
+	<a href = "query.do">query</a>
 	<br>
 </body>
 </html>
